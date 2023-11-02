@@ -1,0 +1,43 @@
+name: Build and Release macOS App
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build and Archive
+      run: |
+        xcodebuild -project LingoSwitch.xcodeproj -scheme LingoSwitch -configuration Release archive -archivePath $PWD/build/LingoSwitch.xcarchive
+
+    - name: Export Archive
+      run: |
+        xcodebuild -exportArchive -archivePath $PWD/build/LingoSwitch.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/LingoSwitch.app
+        asset_name: LingoSwitch.app
+        asset_content_type: application/octet-stream
