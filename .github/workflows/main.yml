@@ -18,10 +18,6 @@ jobs:
       run: |
         xcodebuild -project LingoSwitch.xcodeproj -scheme LingoSwitch -configuration Release archive -archivePath $PWD/build/LingoSwitch.xcarchive
 
-    - name: Export Archive
-      run: |
-        xcodebuild -exportArchive -archivePath $PWD/build/LingoSwitch.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build
-
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -40,5 +36,8 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./build/LingoSwitch.app
+        asset_name: LingoSwitch.app
+        asset_content_type: application/octet-stream
+
         asset_name: LingoSwitch.app
         asset_content_type: application/octet-stream
