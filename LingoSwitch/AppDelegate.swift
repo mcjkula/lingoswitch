@@ -51,33 +51,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func showFloatingWindow() {
         guard floatingWindow == nil else { return }
+
+        let scale: CGFloat = 1.25
+        let windowSize = NSSize(width: 300 * scale, height: 200 * scale)
+        let windowRect = NSRect(origin: .zero, size: windowSize)
+
+        floatingWindow = FloatingWindow(contentRect: windowRect, styleMask: [.borderless], backing: .buffered, defer: false)
+        floatingWindow?.contentView = NSHostingView(rootView: LingoSwitchView())
+        floatingWindow?.center()
         
-        let windowSize = NSSize(width: 300, height: 200)
-        if let screen = NSScreen.main {
-            let screenRect = screen.frame
-            let windowOrigin = NSPoint(x: screenRect.midX - windowSize.width / 2, y: screenRect.midY - windowSize.height / 2)
-            let windowRect = NSRect(origin: windowOrigin, size: windowSize)
-            
-            floatingWindow = FloatingWindow(contentRect: windowRect, styleMask: [.borderless], backing: .buffered, defer: false)
-            floatingWindow?.contentView = NSHostingView(rootView: LingoSwitchView())
-            
-            floatingWindow?.setFrame(windowRect, display: true)
-            floatingWindow?.makeKeyAndOrderFront(nil)
-            floatingWindow?.setFrame(windowRect, display: true)
-        } else {
-            print("No main screen found")
-        }
+        let yOffset: CGFloat = -250
+        floatingWindow?.setFrameOrigin(NSPoint(x: floatingWindow!.frame.origin.x,
+                                               y: floatingWindow!.frame.origin.y + yOffset))
+        
+        floatingWindow?.makeKeyAndOrderFront(nil)
     }
     
     private func hideFloatingWindow() {
-            hideWindowTimer?.cancel()
-            hideWindowTimer = DispatchWorkItem { [weak self] in
-                self?.floatingWindow?.orderOut(nil)
-                self?.floatingWindow = nil
-                self?.languageManager.reorderLanguages()
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: hideWindowTimer!)
+        hideWindowTimer?.cancel()
+        hideWindowTimer = DispatchWorkItem { [weak self] in
+            self?.floatingWindow?.orderOut(nil)
+            self?.floatingWindow = nil
+            self?.languageManager.reorderLanguages()
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: hideWindowTimer!)
+    }
     
     private func resetHideFloatingWindowTimer() {
         hideWindowTimer?.cancel()

@@ -10,37 +10,37 @@ import Carbon
 
 struct LingoSwitchView: View {
     @ObservedObject var languageManager = LanguageManager.shared
+    let scale: CGFloat = 1.25
     
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
+        VStack(alignment: .center, spacing: 10 * scale) {
             ForEach(languageManager.languages) { languageItem in
                 Text(languageItem.name)
-                    .font(.system(size: 16, weight: .medium, design: .rounded))
+                    .font(.system(size: 16 * scale, weight: .medium, design: .rounded))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 8 * scale)
                     .background(languageItem.name == languageManager.currentLanguage ? Color.blue : Color.clear)
-                    .cornerRadius(8)
+                    .cornerRadius(8 * scale)
             }
         }
-        .padding(12)
-        .frame(width: 200, height: rectangleHeight)
+        .padding(12 * scale)
+        .frame(width: 200 * scale, height: rectangleHeight)
         .background(VisualEffectView(material: .underWindowBackground, blendingMode: .withinWindow, state: .active))
         .overlay(Color.black.opacity(0.2))
-        .cornerRadius(10)
-        .shadow(radius: 5)
+        .cornerRadius(10 * scale)
+        .shadow(radius: 5 * scale)
         .onAppear {
             languageManager.fetchEnabledKeyboardLanguages()
         }
     }
     
     var rectangleHeight: CGFloat {
-        let rowHeight: CGFloat = 40
-        let padding: CGFloat = 20
+        let rowHeight: CGFloat = 40 * scale
+        let padding: CGFloat = 20 * scale
         return CGFloat(languageManager.languages.count) * rowHeight + padding
     }
 }
-
 
 struct VisualEffectView: NSViewRepresentable {
     var material: NSVisualEffectView.Material
