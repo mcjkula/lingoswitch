@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		529C92FF2AF2C8A4003229F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C92FE2AF2C8A4003229F8 /* AppDelegate.swift */; };
+		529C93012AF2C920003229F8 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C93002AF2C920003229F8 /* LanguageManager.swift */; };
+		529C93082AF31B12003229F8 /* LanguageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C93072AF31B12003229F8 /* LanguageItem.swift */; };
+		529C930A2AF31B57003229F8 /* TISInputSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C93092AF31B57003229F8 /* TISInputSourceExtensions.swift */; };
+		529C930C2AF31B6F003229F8 /* FloatingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529C930B2AF31B6F003229F8 /* FloatingWindow.swift */; };
+		52C1C1042AF2C7BE00FDF42C /* LingoSwitchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1032AF2C7BE00FDF42C /* LingoSwitchApp.swift */; };
+		52C1C1062AF2C7BE00FDF42C /* LingoSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1052AF2C7BE00FDF42C /* LingoSwitchView.swift */; };
+		52C1C1082AF2C7BF00FDF42C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C1C1072AF2C7BF00FDF42C /* Assets.xcassets */; };
+		52C1C10B2AF2C7BF00FDF42C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C1C10A2AF2C7BF00FDF42C /* Preview Assets.xcassets */; };
+		52C1C1162AF2C7BF00FDF42C /* LingoSwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */; };
+		52C1C1202AF2C7BF00FDF42C /* LingoSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */; };
+		52C1C1222AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52C1C1122AF2C7BF00FDF42C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C0767D2AF28BFE005031A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C1C1002AF2C7BE00FDF42C;
+			remoteInfo = LingoSwitch;
+		};
+		52C1C11C2AF2C7BF00FDF42C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52C0767D2AF28BFE005031A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52C1C1002AF2C7BE00FDF42C;
+			remoteInfo = LingoSwitch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		529C92FE2AF2C8A4003229F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		529C93002AF2C920003229F8 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		529C93022AF2C9AF003229F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529C93072AF31B12003229F8 /* LanguageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageItem.swift; sourceTree = "<group>"; };
+		529C93092AF31B57003229F8 /* TISInputSourceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TISInputSourceExtensions.swift; sourceTree = "<group>"; };
+		529C930B2AF31B6F003229F8 /* FloatingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingWindow.swift; sourceTree = "<group>"; };
+		52C1C1012AF2C7BE00FDF42C /* LingoSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C1C1032AF2C7BE00FDF42C /* LingoSwitchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchApp.swift; sourceTree = "<group>"; };
+		52C1C1052AF2C7BE00FDF42C /* LingoSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchView.swift; sourceTree = "<group>"; };
+		52C1C1072AF2C7BF00FDF42C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52C1C10A2AF2C7BF00FDF42C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52C1C10C2AF2C7BF00FDF42C /* LingoSwitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoSwitch.entitlements; sourceTree = "<group>"; };
+		52C1C1112AF2C7BF00FDF42C /* LingoSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LingoSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchTests.swift; sourceTree = "<group>"; };
+		52C1C11B2AF2C7BF00FDF42C /* LingoSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LingoSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchUITests.swift; sourceTree = "<group>"; };
+		52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52C1C0FE2AF2C7BE00FDF42C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C10E2AF2C7BF00FDF42C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C1182AF2C7BF00FDF42C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52C0767C2AF28BFE005031A5 = {
+			isa = PBXGroup;
+			children = (
+				52C1C1022AF2C7BE00FDF42C /* LingoSwitch */,
+				52C1C1142AF2C7BF00FDF42C /* LingoSwitchTests */,
+				52C1C11E2AF2C7BF00FDF42C /* LingoSwitchUITests */,
+				52C076862AF28BFE005031A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52C076862AF28BFE005031A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52C1C1012AF2C7BE00FDF42C /* LingoSwitch.app */,
+				52C1C1112AF2C7BF00FDF42C /* LingoSwitchTests.xctest */,
+				52C1C11B2AF2C7BF00FDF42C /* LingoSwitchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52C1C1022AF2C7BE00FDF42C /* LingoSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				52C1C1032AF2C7BE00FDF42C /* LingoSwitchApp.swift */,
+				529C92FE2AF2C8A4003229F8 /* AppDelegate.swift */,
+				52C1C1052AF2C7BE00FDF42C /* LingoSwitchView.swift */,
+				529C93002AF2C920003229F8 /* LanguageManager.swift */,
+				529C93072AF31B12003229F8 /* LanguageItem.swift */,
+				529C930B2AF31B6F003229F8 /* FloatingWindow.swift */,
+				529C93092AF31B57003229F8 /* TISInputSourceExtensions.swift */,
+				52C1C1072AF2C7BF00FDF42C /* Assets.xcassets */,
+				529C93022AF2C9AF003229F8 /* Info.plist */,
+				52C1C10C2AF2C7BF00FDF42C /* LingoSwitch.entitlements */,
+				52C1C1092AF2C7BF00FDF42C /* Preview Content */,
+			);
+			path = LingoSwitch;
+			sourceTree = "<group>";
+		};
+		52C1C1092AF2C7BF00FDF42C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				52C1C10A2AF2C7BF00FDF42C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52C1C1142AF2C7BF00FDF42C /* LingoSwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */,
+			);
+			path = LingoSwitchTests;
+			sourceTree = "<group>";
+		};
+		52C1C11E2AF2C7BF00FDF42C /* LingoSwitchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */,
+				52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */,
+			);
+			path = LingoSwitchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52C1C1002AF2C7BE00FDF42C /* LingoSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C1C1232AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitch" */;
+			buildPhases = (
+				52C1C0FD2AF2C7BE00FDF42C /* Sources */,
+				52C1C0FE2AF2C7BE00FDF42C /* Frameworks */,
+				52C1C0FF2AF2C7BE00FDF42C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LingoSwitch;
+			productName = LingoSwitch;
+			productReference = 52C1C1012AF2C7BE00FDF42C /* LingoSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52C1C1102AF2C7BF00FDF42C /* LingoSwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C1C1262AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitchTests" */;
+			buildPhases = (
+				52C1C10D2AF2C7BF00FDF42C /* Sources */,
+				52C1C10E2AF2C7BF00FDF42C /* Frameworks */,
+				52C1C10F2AF2C7BF00FDF42C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52C1C1132AF2C7BF00FDF42C /* PBXTargetDependency */,
+			);
+			name = LingoSwitchTests;
+			productName = LingoSwitchTests;
+			productReference = 52C1C1112AF2C7BF00FDF42C /* LingoSwitchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52C1C11A2AF2C7BF00FDF42C /* LingoSwitchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52C1C1292AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitchUITests" */;
+			buildPhases = (
+				52C1C1172AF2C7BF00FDF42C /* Sources */,
+				52C1C1182AF2C7BF00FDF42C /* Frameworks */,
+				52C1C1192AF2C7BF00FDF42C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52C1C11D2AF2C7BF00FDF42C /* PBXTargetDependency */,
+			);
+			name = LingoSwitchUITests;
+			productName = LingoSwitchUITests;
+			productReference = 52C1C11B2AF2C7BF00FDF42C /* LingoSwitchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52C0767D2AF28BFE005031A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					52C1C1002AF2C7BE00FDF42C = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					52C1C1102AF2C7BF00FDF42C = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 52C1C1002AF2C7BE00FDF42C;
+					};
+					52C1C11A2AF2C7BF00FDF42C = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 52C1C1002AF2C7BE00FDF42C;
+					};
+				};
+			};
+			buildConfigurationList = 52C076802AF28BFE005031A5 /* Build configuration list for PBXProject "LingoSwitch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52C0767C2AF28BFE005031A5;
+			productRefGroup = 52C076862AF28BFE005031A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52C1C1002AF2C7BE00FDF42C /* LingoSwitch */,
+				52C1C1102AF2C7BF00FDF42C /* LingoSwitchTests */,
+				52C1C11A2AF2C7BF00FDF42C /* LingoSwitchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52C1C0FF2AF2C7BE00FDF42C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C1C10B2AF2C7BF00FDF42C /* Preview Assets.xcassets in Resources */,
+				52C1C1082AF2C7BF00FDF42C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C10F2AF2C7BF00FDF42C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C1192AF2C7BF00FDF42C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52C1C0FD2AF2C7BE00FDF42C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529C930A2AF31B57003229F8 /* TISInputSourceExtensions.swift in Sources */,
+				529C92FF2AF2C8A4003229F8 /* AppDelegate.swift in Sources */,
+				529C930C2AF31B6F003229F8 /* FloatingWindow.swift in Sources */,
+				52C1C1062AF2C7BE00FDF42C /* LingoSwitchView.swift in Sources */,
+				52C1C1042AF2C7BE00FDF42C /* LingoSwitchApp.swift in Sources */,
+				529C93082AF31B12003229F8 /* LanguageItem.swift in Sources */,
+				529C93012AF2C920003229F8 /* LanguageManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C10D2AF2C7BF00FDF42C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C1C1162AF2C7BF00FDF42C /* LingoSwitchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52C1C1172AF2C7BF00FDF42C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C1C1222AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift in Sources */,
+				52C1C1202AF2C7BF00FDF42C /* LingoSwitchUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52C1C1132AF2C7BF00FDF42C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52C1C1002AF2C7BE00FDF42C /* LingoSwitch */;
+			targetProxy = 52C1C1122AF2C7BF00FDF42C /* PBXContainerItemProxy */;
+		};
+		52C1C11D2AF2C7BF00FDF42C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52C1C1002AF2C7BE00FDF42C /* LingoSwitch */;
+			targetProxy = 52C1C11C2AF2C7BF00FDF42C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		52C076A82AF28C00005031A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "LangSwitch (Classic)/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52C076A92AF28C00005031A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "LangSwitch (Classic)/Info.plist";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		52C1C1242AF2C7BF00FDF42C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LingoSwitch/LingoSwitch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LingoSwitch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		52C1C1252AF2C7BF00FDF42C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LingoSwitch/LingoSwitch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LingoSwitch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		52C1C1272AF2C7BF00FDF42C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LingoSwitch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LingoSwitch";
+			};
+			name = Debug;
+		};
+		52C1C1282AF2C7BF00FDF42C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitchTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LingoSwitch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LingoSwitch";
+			};
+			name = Release;
+		};
+		52C1C12A2AF2C7BF00FDF42C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LingoSwitch;
+			};
+			name = Debug;
+		};
+		52C1C12B2AF2C7BF00FDF42C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LingoSwitch/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitchUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = LingoSwitch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52C076802AF28BFE005031A5 /* Build configuration list for PBXProject "LingoSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C076A82AF28C00005031A5 /* Debug */,
+				52C076A92AF28C00005031A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C1C1232AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C1C1242AF2C7BF00FDF42C /* Debug */,
+				52C1C1252AF2C7BF00FDF42C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C1C1262AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C1C1272AF2C7BF00FDF42C /* Debug */,
+				52C1C1282AF2C7BF00FDF42C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52C1C1292AF2C7BF00FDF42C /* Build configuration list for PBXNativeTarget "LingoSwitchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52C1C12A2AF2C7BF00FDF42C /* Debug */,
+				52C1C12B2AF2C7BF00FDF42C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52C0767D2AF28BFE005031A5 /* Project object */;
+}
