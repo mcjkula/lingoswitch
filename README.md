@@ -1,7 +1,7 @@
 # LingoSwitch: Bringing Back the Ventura Experience
 
 <p align="center">
-  <img src="http://135.181.60.80:8080/remote.php/dav/files/admin/lingoswitch-preview.gif" alt="LingoSwitch" width="auto" height="auto">
+  <img src="https://i.imgur.com/YuiOsOz.mp4" alt="LingoSwitch" width="auto" height="auto">
 </p>
 
 Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switcher from macOS Ventura. For those who prefer the simplicity and familiarity of the old switcher.
