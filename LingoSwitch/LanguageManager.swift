@@ -13,6 +13,18 @@ class LanguageManager: ObservableObject {
     @Published var currentLanguage: String = ""
     @Published var previousLanguage: String? = nil
     @Published var languages: [LanguageItem] = []
+    var isPopupVisible: Bool = false
+    
+    init() {
+        fetchEnabledKeyboardLanguages()
+        setCurrentLanguage()
+    }
+    
+    func setCurrentLanguage() {
+        if let currentSource = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() {
+            currentLanguage = currentSource.localizedName
+        }
+    }
     
     func fetchEnabledKeyboardLanguages() {
         let inputSources = TISCreateInputSourceList(nil, false).takeRetainedValue() as! [TISInputSource]
@@ -24,51 +36,70 @@ class LanguageManager: ObservableObject {
         }
     }
     
-    func switchKeyboardLanguage() {
-        guard let currentSource = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue() else {
-            print("Failed to switch keyboard language.")
-            return
-        }
-        
+    func switchKeyboardLanguage(updatePrevious: Bool = true) {
         let inputSources = getInputSources()
-        if inputSources.isEmpty {
+        let currentSource = TISCopyCurrentKeyboardInputSource()?.takeUnretainedValue()
+        
+        let (_, nextSource) = determineCurrentAndNextSources(inputSources: inputSources, currentSource: currentSource)
+        
+        if let nextSource = nextSource {
+            TISSelectInputSource(nextSource)
+            
+            let newLanguageName = nextSource.localizedName
+            if updatePrevious {
+                previousLanguage = currentLanguage
+            }
+            currentLanguage = newLanguageName
+            
+            let action = updatePrevious ? "Switched" : "Continues switching"
+            print("\(action) to \(newLanguageName) (which indirectly means Switched from \(previousLanguage ?? "unknown") to \(newLanguageName))")
+        } else {
             print("Failed to switch keyboard language.")
-            return
         }
-        
-        guard let currentIndex = inputSources.firstIndex(where: { $0 == currentSource }) else {
-            print("Failed to switch keyboard language.")
-            return
-        }
-        
-        let nextIndex = (currentIndex + 1) % inputSources.count
-        let nextSource = inputSources[nextIndex]
-        TISSelectInputSource(nextSource)
-        
-        let newLanguageName = Unmanaged<CFString>.fromOpaque(TISGetInputSourceProperty(nextSource, kTISPropertyLocalizedName)).takeUnretainedValue() as String
-        
-        currentLanguage = newLanguageName
-        print("Language switched from '\(previousLanguage ?? "unknown")' to '\(newLanguageName)'")
     }
+
+    private func determineCurrentAndNextSources(inputSources: [TISInputSource], currentSource: TISInputSource?) -> (Int?, TISInputSource?) {
+        if languages.isEmpty {
+            guard let currentSource = currentSource,
+                  let currentIndex = inputSources.firstIndex(where: { $0 == currentSource }) else {
+                return (nil, nil)
+            }
+            let nextIndex = (currentIndex + 1) % inputSources.count
+            return (currentIndex, inputSources[nextIndex])
+        } else {
+            guard let currentLanguageIndex = languages.firstIndex(where: { $0.name == currentLanguage }),
+                  let nextLanguage = languages[safe: (currentLanguageIndex + 1) % languages.count],
+                  let nextSource = inputSources.first(where: { $0.localizedName == nextLanguage.name }) else {
+                return (nil, nil)
+            }
+            return (currentLanguageIndex, nextSource)
+        }
+    }
+
     
     func reorderLanguages() {
         let inputSources = getInputSources()
         
         var languageNames = inputSources.map { $0.localizedName }
         
-        languageNames.removeAll { $0 == "Emoji & Symbols" || $0.contains("com.apple.PressAndHold") }
+        languageNames.removeAll { $0 == "Emoji & Symbols" || $0.contains("com.apple.PressAndHold") || $0.isEmpty }
         
-        if let currentLanguageIndex = languageNames.firstIndex(of: currentLanguage) {
-            languageNames.remove(at: currentLanguageIndex)
+        languageNames.removeAll(where: { $0 == currentLanguage || $0 == previousLanguage })
+        
+        var reorderedLanguages = [currentLanguage]
+        
+        if let previous = previousLanguage, previous != currentLanguage, !previous.isEmpty {
+            reorderedLanguages.append(previous)
         }
         
-        languageNames.sort()
+        reorderedLanguages.append(contentsOf: languageNames)
         
-        var languageItems = languageNames.map { LanguageItem(id: UUID(), name: $0) }
+        print("Reordered languages: \(reorderedLanguages)")
         
-        languageItems.insert(LanguageItem(id: UUID(), name: currentLanguage), at: 0)
-        
-        languages = languageItems
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+            self.languages = reorderedLanguages.map { LanguageItem(id: UUID(), name: $0) }
+        }
     }
     
     private func getInputSources() -> [TISInputSource] {
@@ -80,5 +111,11 @@ class LanguageManager: ObservableObject {
             source.category == TISInputSource.Category.keyboardInputSource &&
             source.isSelectable
         }
+    }
+}
+
+extension Array {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

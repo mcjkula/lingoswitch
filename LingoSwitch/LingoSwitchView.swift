@@ -31,7 +31,6 @@ struct LingoSwitchView: View {
         .cornerRadius(10 * scale)
         .shadow(radius: 5 * scale)
         .onAppear {
-            languageManager.fetchEnabledKeyboardLanguages()
         }
     }
     

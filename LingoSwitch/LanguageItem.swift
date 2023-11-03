@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LanguageItem: Identifiable {
+struct LanguageItem: Identifiable, Equatable {
     let id: UUID
     let name: String
 }
