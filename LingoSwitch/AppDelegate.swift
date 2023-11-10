@@ -8,6 +8,7 @@
 import AppKit
 import SwiftUI
 import Carbon
+import LaunchAtLogin
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var floatingWindow: FloatingWindow?
@@ -32,9 +33,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let statusBarMenu = NSMenu(title: "Status Bar Menu")
+        
+        let launchAtLoginMenuItem = NSMenuItem(
+            title: "Launch on Startup",
+            action: #selector(toggleLaunchAtLogin(_:)),
+            keyEquivalent: ""
+        )
+        launchAtLoginMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
+        statusBarMenu.addItem(launchAtLoginMenuItem)
+
+        statusBarMenu.addItem(NSMenuItem.separator())
+        
         statusBarMenu.addItem(withTitle: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         statusBarItem?.menu = statusBarMenu
     }
+    
+    @objc private func toggleLaunchAtLogin(_ sender: NSMenuItem) {
+            sender.state = (sender.state == .on) ? .off : .on
+            LaunchAtLogin.isEnabled = (sender.state == .on)
+        }
     
     private func addGlobalEventMonitor() {
         NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { [weak self] event in
@@ -83,7 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self?.floatingWindow = nil
             self?.languageManager.reorderLanguages()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: hideWindowTimer!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.50, execute: hideWindowTimer!)
     }
     
     private func resetHideFloatingWindowTimer() {
@@ -93,6 +110,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self?.floatingWindow = nil
             self?.languageManager.reorderLanguages()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75, execute: hideWindowTimer!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.50, execute: hideWindowTimer!)
     }
 }
