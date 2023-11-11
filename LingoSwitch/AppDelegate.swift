@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var floatingWindow: FloatingWindow?
     let languageManager = LanguageManager.shared
     var statusBarItem: NSStatusItem?
+    var settingsWindow: NSWindow?
     var hideWindowTimer: DispatchWorkItem?
     var lingoSwitchView: LingoSwitchView?
     
@@ -49,9 +50,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc private func toggleLaunchAtLogin(_ sender: NSMenuItem) {
-            sender.state = (sender.state == .on) ? .off : .on
-            LaunchAtLogin.isEnabled = (sender.state == .on)
-        }
+        sender.state = (sender.state == .on) ? .off : .on
+        LaunchAtLogin.isEnabled = (sender.state == .on)
+    }
     
     private func addGlobalEventMonitor() {
         NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { [weak self] event in
