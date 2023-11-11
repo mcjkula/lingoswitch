@@ -17,8 +17,9 @@ Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switch
 ## Roadmap
 
 - ~~**Smart Language Sorting**: Prioritize languages based on usage.~~ (Done)
-- **Login Integration**: Launch LingoSwitch automatically upon system startup.
-- **Full Ventura Feature Set**: Implement all original functionalities.
+- ~~**Login Integration**: Launch LingoSwitch automatically upon system startup.~~ (Done)
+- **Typing Detection**: Autohiding the Pop-Up Window on Keypress (In Progress)
+- **Adding Customisation**: Hotkeys for Quick Swapping, Adjusting the Window Delay
 
 ## Quick Start
 
