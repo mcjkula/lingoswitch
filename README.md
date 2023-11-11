@@ -12,6 +12,7 @@ Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switch
 - **Background Operation**: Stays active without interfering with your workflow.
 - **Language Switching**: Effortlessly change keyboard languages.
 - **Smart Language Sorting**: Prioritize languages based on usage.
+- **Login Integration**: Launch LingoSwitch automatically upon system startup.
 - **Persistent Pop-Up**: Repeated "🌐" key presses extend display time.
 
 ## Roadmap
