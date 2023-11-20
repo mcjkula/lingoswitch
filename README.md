@@ -25,8 +25,9 @@ Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switch
 ## Quick Start
 
 1. Go to Settings > Keyboard and set "Press "🌐"-Key" to "Do Nothing".
-2. Clone the repository.
+2. Go to the "Releases"-Tab and download the latest ZIP.
 3. Extract and launch LingoSwitch.app.
+4. Move to "Applications". (optionally)
 
 ## What's Next?
 
