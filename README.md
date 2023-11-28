@@ -31,7 +31,7 @@ Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switch
 
 ## What's Next?
 
-My goal is to refine LingoSwitch, incorporating all Ventura features and beyond.
+My goal is to refine LingoSwitch, incorporating all Ventura features.
 
 ## License
 LingoSwitch is available under the MIT License. See [LICENSE](LICENSE) for details.
