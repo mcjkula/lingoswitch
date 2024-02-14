@@ -17,14 +17,15 @@ Welcome to LingoSwitch, the tool reviving the intuitive vertical-language switch
 ## Roadmap
 
 - ~~**Smart Language Sorting**: Prioritize languages based on usage.~~ (Done)
-- **Login Integration**: Launch LingoSwitch automatically upon system startup.
+- ~~**Login Integration**: Launch LingoSwitch automatically upon system startup.~~ (Done)
 - **Full Ventura Feature Set**: Implement all original functionalities.
 
 ## Quick Start
 
 1. Go to Settings > Keyboard and set "Press "🌐"-Key" to "Do Nothing".
-2. Clone the repository.
-3. Extract and launch LingoSwitch.app.
+2. Go to the "Releases"-Tab.
+3. Download the correct architecture binary.
+4. Extract and launch LingoSwitch.app.
 
 ## What's Next?
 
