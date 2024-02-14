@@ -8,7 +8,7 @@
 import AppKit
 import SwiftUI
 import Carbon
-import LaunchAtLogin
+import ServiceManagement
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var floatingWindow: FloatingWindow?
@@ -40,7 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             action: #selector(toggleLaunchAtLogin(_:)),
             keyEquivalent: ""
         )
-        launchAtLoginMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
+        
+        let launchAtLoginEnabled = SMAppService.mainApp.status == .enabled
+        launchAtLoginMenuItem.state = launchAtLoginEnabled ? .on : .off
         statusBarMenu.addItem(launchAtLoginMenuItem)
 
         statusBarMenu.addItem(NSMenuItem.separator())
@@ -50,12 +52,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc private func toggleLaunchAtLogin(_ sender: NSMenuItem) {
-        sender.state = (sender.state == .on) ? .off : .on
-        LaunchAtLogin.isEnabled = (sender.state == .on)
+        let appService = SMAppService.mainApp
+        do {
+            if sender.state == .on {
+                try appService.unregister()
+                sender.state = .off
+            } else {
+                try appService.register()
+                sender.state = .on
+            }
+        } catch {
+            print("Error toggling launch at login: \(error)")
+        }
     }
     
     private func addGlobalEventMonitor() {
         NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { [weak self] event in
+            
             if event.modifierFlags.contains(.function) {
                 if self?.floatingWindow == nil {
                     self?.languageManager.switchKeyboardLanguage(updatePrevious: true)

@@ -16,10 +16,6 @@
 		52C1C1062AF2C7BE00FDF42C /* LingoSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1052AF2C7BE00FDF42C /* LingoSwitchView.swift */; };
 		52C1C1082AF2C7BF00FDF42C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C1C1072AF2C7BF00FDF42C /* Assets.xcassets */; };
 		52C1C10B2AF2C7BF00FDF42C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C1C10A2AF2C7BF00FDF42C /* Preview Assets.xcassets */; };
-		52C1C1162AF2C7BF00FDF42C /* LingoSwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */; };
-		52C1C1202AF2C7BF00FDF42C /* LingoSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */; };
-		52C1C1222AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */; };
-		52FFE52F2AFEE08B00CAE811 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 52FFE52E2AFEE08B00CAE811 /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +49,7 @@
 		52C1C10A2AF2C7BF00FDF42C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52C1C10C2AF2C7BF00FDF42C /* LingoSwitch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoSwitch.entitlements; sourceTree = "<group>"; };
 		52C1C1112AF2C7BF00FDF42C /* LingoSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LingoSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchTests.swift; sourceTree = "<group>"; };
 		52C1C11B2AF2C7BF00FDF42C /* LingoSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LingoSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchUITests.swift; sourceTree = "<group>"; };
-		52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoSwitchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FFE52F2AFEE08B00CAE811 /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				52C1C1022AF2C7BE00FDF42C /* LingoSwitch */,
-				52C1C1142AF2C7BF00FDF42C /* LingoSwitchTests */,
-				52C1C11E2AF2C7BF00FDF42C /* LingoSwitchUITests */,
 				52C076862AF28BFE005031A5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,23 +121,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		52C1C1142AF2C7BF00FDF42C /* LingoSwitchTests */ = {
-			isa = PBXGroup;
-			children = (
-				52C1C1152AF2C7BF00FDF42C /* LingoSwitchTests.swift */,
-			);
-			path = LingoSwitchTests;
-			sourceTree = "<group>";
-		};
-		52C1C11E2AF2C7BF00FDF42C /* LingoSwitchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52C1C11F2AF2C7BF00FDF42C /* LingoSwitchUITests.swift */,
-				52C1C1212AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift */,
-			);
-			path = LingoSwitchUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,7 +131,6 @@
 				52C1C0FD2AF2C7BE00FDF42C /* Sources */,
 				52C1C0FE2AF2C7BE00FDF42C /* Frameworks */,
 				52C1C0FF2AF2C7BE00FDF42C /* Resources */,
-				52FFE5302AFEE39500CAE811 /* Copy “Launch at Login Helper” */,
 			);
 			buildRules = (
 			);
@@ -166,7 +138,6 @@
 			);
 			name = LingoSwitch;
 			packageProductDependencies = (
-				52FFE52E2AFEE08B00CAE811 /* LaunchAtLogin */,
 			);
 			productName = LingoSwitch;
 			productReference = 52C1C1012AF2C7BE00FDF42C /* LingoSwitch.app */;
@@ -241,7 +212,6 @@
 			);
 			mainGroup = 52C0767C2AF28BFE005031A5;
 			packageReferences = (
-				52FFE52D2AFEE08B00CAE811 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 52C076862AF28BFE005031A5 /* Products */;
 			projectDirPath = "";
@@ -280,28 +250,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		52FFE5302AFEE39500CAE811 /* Copy “Launch at Login Helper” */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy “Launch at Login Helper”";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		52C1C0FD2AF2C7BE00FDF42C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C1C1162AF2C7BF00FDF42C /* LingoSwitchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C1C1222AF2C7BF00FDF42C /* LingoSwitchUITestsLaunchTests.swift in Sources */,
-				52C1C1202AF2C7BF00FDF42C /* LingoSwitchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +332,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -407,7 +352,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -451,7 +396,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -465,6 +410,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -473,6 +419,7 @@
 		52C1C1242AF2C7BF00FDF42C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LingoSwitch/LingoSwitch.entitlements;
@@ -486,14 +433,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LingoSwitch/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.2.2;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitch";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcjkula.LingoSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -503,6 +452,7 @@
 		52C1C1252AF2C7BF00FDF42C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LingoSwitch/LingoSwitch.entitlements;
@@ -516,14 +466,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LingoSwitch/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
+				MARKETING_VERSION = 0.2.2;
 				NEW_SETTING = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "Maciej-Kula.LingoSwitch";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcjkula.LingoSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -642,25 +594,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		52FFE52D2AFEE08B00CAE811 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		52FFE52E2AFEE08B00CAE811 /* LaunchAtLogin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 52FFE52D2AFEE08B00CAE811 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
-			productName = LaunchAtLogin;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52C0767D2AF28BFE005031A5 /* Project object */;
 }

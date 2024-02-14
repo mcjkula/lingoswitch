@@ -19,23 +19,23 @@ struct LingoSwitchView: View {
                     .font(.system(size: 16 * scale, weight: .medium, design: .rounded))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 8 * scale)
+                    .padding(.vertical, 10 * scale)
                     .background(languageItem.name == languageManager.currentLanguage ? Color.blue : Color.clear)
-                    .cornerRadius(8 * scale)
+                    .cornerRadius(16 * scale)
             }
         }
         .padding(12 * scale)
         .frame(width: 200 * scale, height: rectangleHeight)
         .background(VisualEffectView(material: .underWindowBackground, blendingMode: .withinWindow, state: .active))
         .overlay(Color.black.opacity(0.2))
-        .cornerRadius(10 * scale)
-        .shadow(radius: 5 * scale)
+        .cornerRadius(24 * scale)
+        .shadow(radius: 2 * scale)
         .onAppear {
         }
     }
     
     var rectangleHeight: CGFloat {
-        let rowHeight: CGFloat = 40 * scale
+        let rowHeight: CGFloat = 50 * scale
         let padding: CGFloat = 20 * scale
         return CGFloat(languageManager.languages.count) * rowHeight + padding
     }
